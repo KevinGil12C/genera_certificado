@@ -53,7 +53,7 @@ def generate_certificate():
     cert_pem = certificate.public_bytes(Encoding.PEM)
     priv_key_pem = private_key.private_bytes(
         encoding=Encoding.PEM,
-        format=PrivateFormat.TraditionalOpenSSL,
+        format=PrivateFormat.PKCS8,  # Usar PKCS8 en lugar de TraditionalOpenSSL
         encryption_algorithm=BestAvailableEncryption(password)
     )
 
